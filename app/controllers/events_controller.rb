@@ -41,6 +41,11 @@ class EventsController < ApplicationController
   # PATCH/PUT /events/1.json
   def update
     respond_to do |format|
+
+	Location.find(params["add_locations"]).each do |location|
+  	@event.locations << location
+	end
+
       if @event.update(event_params)
         format.html { redirect_to @event, notice: 'Event was successfully updated.' }
         format.json { render :show, status: :ok, location: @event }

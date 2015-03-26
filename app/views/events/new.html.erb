@@ -3,3 +3,43 @@
 <%= render 'form' %>
 
 <%= link_to 'Back', events_path %>
+
+<p>
+
+<strong>Locations:</strong>
+
+
+
+<table>
+
+  <thead>
+
+    <tr>
+
+      <th>Name</th>
+
+      <th>Tag</th>
+
+      <th colspan="3"></th>
+
+    </tr>
+
+  </thead>
+
+
+
+  <% @event.locations.each do |location| %>
+
+    <tr>
+
+      <td><%= location.name %></td>
+
+      <td><%= location.tag %></td>
+
+    </tr>
+
+  <% end %>
+
+</table>
+
+</p>
